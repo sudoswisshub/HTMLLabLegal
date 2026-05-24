@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support &amp; FAQ - HTMLLab Developer Utility</title>
+    <meta name="description" content="Get help, read developer FAQs, or contact our support team. Connect directly with the HTMLLab development desk.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient Glowing Orbs Background -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Sticky Navigation Header -->
+    <header class="header-nav" id="mainHeader">
+        <div class="nav-container">
+            <a href="support.html" class="logo-link">
+                <img src="logo.png" alt="HTMLLab Logo" class="logo-img">
+                <div class="logo-text">HTML<span>Lab</span></div>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation menu" aria-expanded="false">
+                &#9776;
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <li class="nav-item active"><a href="support.html">Support</a></li>
+                <li class="nav-item"><a href="terms.html">Terms</a></li>
+                <li class="nav-item"><a href="privacy.html">Privacy</a></li>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Header -->
+        <section class="hero-section">
+            <span class="hero-tag">Help Center</span>
+            <h1 class="hero-title">Developer <span>Support</span></h1>
+            <p class="hero-subtitle">Browse through frequently asked operational guides, check diagnostic configurations, or send us a support ticket directly.</p>
+        </section>
+
+        <!-- Main Glass Card holding the form and support options -->
+        <div class="glass-card" style="margin-bottom: 40px;">
+            <div class="support-grid">
+                
+                <!-- Left: Channels -->
+                <div class="support-channels">
+                    <h2 class="form-title">Support Channels</h2>
+                    
+                    <!-- Channel Card: Email -->
+                    <div class="channel-card">
+                        <div class="channel-icon">✉</div>
+                        <div class="channel-info">
+                            <h3>Direct Email Help</h3>
+                            <p>Send a direct diagnostic request or general query to our primary developer inbox. We typically reply within 24 business hours.</p>
+                            <a href="mailto:alice.turcanu91@gmail.com?subject=HTMLLab%20Developer%20Support%20Request" class="channel-btn">
+                                Email alice.turcanu91@gmail.com &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Channel Card: GitHub -->
+                    <div class="channel-card">
+                        <div class="channel-icon">⚙</div>
+                        <div class="channel-info">
+                            <h3>In-App Debugger Feedback</h3>
+                            <p>Reporting a WebKit rendering bug, audit discrepancy, or a feature recommendation? You can also contact us online.</p>
+                            <a href="mailto:alice.turcanu91@gmail.com?subject=HTMLLab%20In-App%20Bug%20Report" class="channel-btn">
+                                Submit Bug Report &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Dynamic Contact Form -->
+                <div style="position: relative;">
+                    <h2 class="form-title">Send a Ticket</h2>
+                    
+                    <form class="contact-form" id="supportForm" novalidate>
+                        <!-- Form Success Overlay -->
+                        <div class="form-success-overlay" id="successOverlay">
+                            <div class="success-icon">&#10004;</div>
+                            <h3 class="success-title">Message Sent!</h3>
+                            <p class="success-desc">Thank you, your support request has been validated and compiled. Alice will be in touch shortly.</p>
+                            <button type="button" class="submit-btn" id="resetFormBtn" style="margin-top: 24px; padding: 10px 20px; font-size: 0.9rem;">
+                                Send Another Ticket
+                            </button>
+                        </div>
+
+                        <!-- Name field -->
+                        <div class="form-group" id="nameGroup">
+                            <label for="userName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="userName" placeholder="Your name" autocomplete="name">
+                            <span class="form-error" id="nameError">Please enter your name (minimum 2 characters).</span>
+                        </div>
+
+                        <!-- Email field -->
+                        <div class="form-group" id="emailGroup">
+                            <label for="userEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="userEmail" placeholder="you@example.com" autocomplete="email">
+                            <span class="form-error" id="emailError">Please enter a valid developer email address.</span>
+                        </div>
+
+                        <!-- Message field -->
+                        <div class="form-group" id="msgGroup">
+                            <label for="userMessage" class="form-label">Support Details &amp; Diagnostics</label>
+                            <textarea class="form-control" id="userMessage" placeholder="Describe the issue, step-by-step reproduction, or feature suggestions..."></textarea>
+                            <span class="form-error" id="msgError">Please provide dynamic details about your inquiry (minimum 10 characters).</span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span>Compile &amp; Dispatch Ticket</span>
+                            <span style="font-size: 1.15rem;">&rarr;</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Dynamic FAQ Accordion Container -->
+        <div class="glass-card">
+            <section class="faq-section">
+                <h2 class="faq-title" style="text-align: center; margin-bottom: 36px;">Frequently Asked <span>Questions</span></h2>
+                
+                <div class="faq-container">
+                    
+                    <!-- Accordion Item 1 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span>What exactly is HTMLLab?</span>
+                            <span class="faq-icon-box"><i></i></span>
+                        </button>
+                        <div class="faq-content">
+                            <p>HTMLLab is a high-performance native macOS, iOS, and iPadOS developer environment built for inspecting, editing, and auditing web environments. It includes an element inspector (similar to Safari or Chrome DevTools), a live JavaScript shell console for page diagnostics, responsive device presets, and custom-injected audits to analyze SEO performance, accessibility headings, image tags, and styling parameters.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 2 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span>Does HTMLLab upload my proprietary code drafts online?</span>
+                            <span class="faq-icon-box"><i></i></span>
+                        </button>
+                        <div class="faq-content">
+                            <p>No. Absolute confidentiality is our core philosophy. Your code drafts, HTML structures, local cookie databases, bookmarks, and developer history remain restricted inside your device's native Application sandbox. Compilations and rendering previews occur 100% locally on your machine CPU, completely offline without any cloud compilation engines or analytical trackers.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 3 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span>How do I use the Element Inspector cursor tool?</span>
+                            <span class="faq-icon-box"><i></i></span>
+                        </button>
+                        <div class="faq-content">
+                            <p>To inspect element parameters in a live web view: click the cursor-in-square picker icon located in the top navigation panel, then hover your pointer over any element in the rendering web viewport and click. HTMLLab will immediately open the DOM Tree inspector and display the targeted node's hierarchy, computed CSS styles, attributes, and classes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 4 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span>Can I execute custom JavaScript statements inside the console?</span>
+                            <span class="faq-icon-box"><i></i></span>
+                        </button>
+                        <div class="faq-content">
+                            <p>Yes. The Console Panel contains a full-featured Command Line Interface (CLI) text field at the bottom. By typing standard JavaScript lines and pressing Enter, the statements are immediately bridged, evaluated, and compiled inside the active WebKit context, with outputs or errors reported dynamically back to the console logs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 5 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span>How do I completely clear cached local assets or reset playground templates?</span>
+                            <span class="faq-icon-box"><i></i></span>
+                        </button>
+                        <div class="faq-content">
+                            <p>If you encounter rendering loops or need to flush stored sandbox cookie data, navigate to the <strong>Settings View</strong> inside the app, and click the <strong>Storage &amp; Session Actions</strong> tab. Here, you will find direct controls to clear browsing history, flush session cookies and caches, or reset sandbox code drafts back to the default HTML starter template.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-nav">
+        <div class="container footer-container">
+            <a href="support.html" class="footer-logo">
+                <img src="logo.png" alt="HTMLLab Logo" style="height: 24px; width: 24px; object-fit: cover; border-radius: 4px;">
+                <span>HTMLLab</span>
+            </a>
+            <ul class="footer-links">
+                <li><a href="support.html">Support Center</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+            <div class="copyright">
+                &copy; 2026 HTMLLab. Built for modern web developers.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+            menuToggle.setAttribute('aria-expanded', !expanded);
+            navMenu.classList.toggle('active');
+        });
+
+        // FAQ Accordion Interaction
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const trigger = item.querySelector('.faq-trigger');
+            
+            trigger.addEventListener('click', () => {
+                const isExpanded = item.classList.contains('expanded');
+                
+                // Close all other items first
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('expanded');
+                        otherItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+                        otherItem.querySelector('.faq-content').style.maxHeight = '0px';
+                    }
+                });
+
+                // Toggle selected item
+                if (isExpanded) {
+                    item.classList.remove('expanded');
+                    trigger.setAttribute('aria-expanded', 'false');
+                    item.querySelector('.faq-content').style.maxHeight = '0px';
+                } else {
+                    item.classList.add('expanded');
+                    trigger.setAttribute('aria-expanded', 'true');
+                    const content = item.querySelector('.faq-content');
+                    // Set max-height dynamically to match child element height for smooth CSS transition
+                    content.style.maxHeight = content.scrollHeight + 40 + 'px'; // add buffer for padding
+                }
+            });
+        });
+
+        // Form Validation & Success Interactive Transition
+        const form = document.getElementById('supportForm');
+        const userName = document.getElementById('userName');
+        const userEmail = document.getElementById('userEmail');
+        const userMessage = document.getElementById('userMessage');
+        const successOverlay = document.getElementById('successOverlay');
+        const resetBtn = document.getElementById('resetFormBtn');
+
+        const nameGroup = document.getElementById('nameGroup');
+        const emailGroup = document.getElementById('emailGroup');
+        const msgGroup = document.getElementById('msgGroup');
+
+        // Basic email regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            let isValid = true;
+
+            // Reset previous validation classes
+            nameGroup.classList.remove('has-error');
+            emailGroup.classList.remove('has-error');
+            msgGroup.classList.remove('has-error');
+
+            // Name validation
+            if (userName.value.trim().length < 2) {
+                nameGroup.classList.add('has-error');
+                isValid = false;
+            }
+
+            // Email validation
+            if (!emailRegex.test(userEmail.value.trim())) {
+                emailGroup.classList.add('has-error');
+                isValid = false;
+            }
+
+            // Message validation
+            if (userMessage.value.trim().length < 10) {
+                msgGroup.classList.add('has-error');
+                isValid = false;
+            }
+
+            // If form passes all validation client-side, run transition
+            if (isValid) {
+                // Show glass success overlay
+                successOverlay.classList.add('active');
+            }
+        });
+
+        // Reset Form from Success State
+        resetBtn.addEventListener('click', () => {
+            form.reset();
+            successOverlay.classList.remove('active');
+            
+            // Clear any error states just in case
+            nameGroup.classList.remove('has-error');
+            emailGroup.classList.remove('has-error');
+            msgGroup.classList.remove('has-error');
+        });
+    </script>
+</body>
+</html>
